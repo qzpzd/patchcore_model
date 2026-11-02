@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Datasets and generated workspaces
+data/
+results/
+inference_results*/
+gear_512_workspace/
+gear_512_good_workspace/
+.spec-workflow/
+
+# Model weights and large binary artifacts
+*.pth
+*.pt
+*.onnx
+*.ckpt
+*.npy
+*.npz
+*.h5
+
+# Logs and local settings
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,28 @@
+# PatchCore Configuration
+# 完全对齐 Anomalib PatchCore 官方默认
+
+# Model settings
+model:
+  backbone: "wide_resnet50_2"
+  layers: ["layer2", "layer3"]
+  patch_size: 3                 # AvgPool2d(3,1,1) 邻域聚合
+  sampling_ratio: 0.1           # approx_greedy_coreset（亚马逊官网默认）
+  num_neighbors: 9              # Anomalib 默认；亚马逊基线脚本常见为 1
+
+# Data settings
+data:
+  image_size: [256, 256]
+  batch_size: 8                 # wide_resnet50 显存友好默认
+  num_workers: 0
+
+# Training settings
+training:
+  device: "cuda"
+  save_path: "./results"
+
+# Inference settings
+# Anomalib 使用自适应阈值；此处默认 F1 最优
+inference:
+  threshold_mode: "f1_optimal"
+  threshold: null
+  visualize: True
